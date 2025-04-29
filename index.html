@@ -20,7 +20,34 @@
       margin: 0;
       padding: 0;
     }
-    body {
+    .brand-highlight {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 0 0 8px rgba(210,180,140,0.8);
+  animation: glow 2s ease-in-out infinite alternate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.brand-highlight::before {
+  content: "☕";
+  color: var(--accent-color);
+  font-size: 1.2em;
+}
+
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 6px rgba(210,180,140,0.4);
+  }
+  to {
+    text-shadow: 0 0 12px rgba(210,180,140,1);
+  }
+}
+
+body {
       font-family: "Georgia", serif;
       background: var(--bg-color);
       color: var(--text-color);
@@ -224,7 +251,7 @@
 </head>
 <body>
   <header>
-    <h1>Bean & Brew Café</h1>
+    <h1><span class="brand-highlight">Bean & Brew Café</span></h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -307,7 +334,7 @@
     </div>
   </section>
   <footer>
-    <p>&copy; 2025 Bean & Brew Café. All rights reserved.</p>
+    <p>&copy; 2025 <span class="brand-highlight">Bean & Brew Café</span>. All rights reserved.</p>
   </footer>
   <button id="backToTop" aria-label="Back to Top">
     <i class="fas fa-chevron-up"></i>
